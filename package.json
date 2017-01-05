@@ -1,0 +1,32 @@
+{
+  "name": "modern-theme.dev",
+  "version": "1.0.0",
+  "description": "Website layout for playing with typography, grid, and UX. Possibly a starter theme.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^3.0.0",
+    "gulp-sourcemaps": "^1.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/kruegerdesigns/modern-theme.git"
+  },
+  "keywords": [
+    "theme",
+    "template",
+    "starter",
+    "boilerplate"
+  ],
+  "author": "Adam Krueger adam@kruegerdesigns.com",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/kruegerdesigns/modern-theme#readme"
+}

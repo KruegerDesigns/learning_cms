@@ -1,0 +1,2 @@
+# Run PHP code in HTML documents
+AddType application/x-httpd-php .html .htm
