@@ -63,11 +63,11 @@ $cta-color: #4585F2;
     font-size: 16px;
   }
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-}
+// @media only screen and (max-width: 480px) {
+//   html {
+//     font-size: 14px;
+//   }
+// }
 
 // Responsive Flex-box Grid:
 // https://css-tricks.com/dont-overthink-flexbox-grids
@@ -147,7 +147,11 @@ a {
       max-width: 750px;
     }
     &.footer {
+      margin-top: 3rem;
       margin-bottom: 0;
+      .container {
+        max-width: 960px;
+      }
     }
     & + .stripe {
       margin-top: -2rem;
@@ -155,6 +159,7 @@ a {
     }
   }
   .container {
+    position: relative;
     max-width: 960px;
     width: 90%;
     margin: 0 auto;
@@ -201,9 +206,14 @@ a {
     .audio-wrap {
       @extend .block-style;
       display: inline-flex;
-      align-content: center;
       padding: 0;
       margin-bottom: 1rem;
+      height: auto;
+      min-height: 1.5rem;
+      audio {
+        display: inline-block;
+        height: auto;
+      }
     }
     
     blockquote {
@@ -263,7 +273,7 @@ a {
       .select-wrap {
         @extend .block-style;
         display: block;
-        width: 33%;
+        min-width: 33%;
         padding: 0;
         margin-bottom: 1rem;
         select {
@@ -326,31 +336,30 @@ a {
     }
     
     &.navbar {
-      display: absolute;
+      position: fixed;
+      z-index: 10;
       top: 0;
       left: 0;
       max-width: 100%;
       width: 100%;
+      height: 80px;
       margin: 0;
-      background-color: $secondary-color;
-      &.scroll-hide {
-        position: fixed;
-        border-bottom: 1px solid darken($secondary-color, 5);
-        z-index: 10;
-      }
+      background-color: rgba(0,0,0, .15);
       nav {
         max-width: 960px;
         width: 90%;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         flex-wrap: wrap;
         a {
-          height: 60px;
+          height: 100%;
+          min-height: 60px;
           min-width: 2rem;
           display: inline-flex;
           align-items: center;
           text-align: center;
-          color: $text-light-color;
+          color: $secondary-color;
           padding: .25rem .5rem;
           font-size: .8rem;
           font-weight: 600;
@@ -358,18 +367,19 @@ a {
           text-decoration: none;
           letter-spacing: 1px;
           &:hover {
-            background-color: rgba(255,255,255, .20);
-            color: lighten($cta-color, 10);
+            background-color: $cta-color;
+            color: #fff;
           }
         }
         a.logo {
           justify-content: center;
+          padding: 0 1rem;
           img {
             height: 1rem;
             width: auto;
           }
           svg {
-            fill: $text-light-color;
+            fill: $secondary-color;
             &.menu-icon {
               height: 1rem;
               width: 1rem;
@@ -377,17 +387,44 @@ a {
           }
           &:hover {
             svg {
-              fill: lighten($cta-color, 10);
+              fill: #fff;
             }
           }
         }
       }
+      &.nav-scroll {
+        position: fixed;
+        border-bottom: 1px solid darken($secondary-color, 5);
+        height: auto;
+        background-color: $secondary-color;
+        nav a {
+          color: $text-light-color;
+          svg {
+            fill: $text-light-color;
+          }
+          &:hover {
+            color: #fff;
+            svg {
+              fill: #fff;
+            }
+          }
+        }
+      }
+      &.nav-top {
+        position: absolute;
+      }
     }
+
+    &.navbar.alt-dropped {
+      
+    }
+
     &.hero {
       position: relative;
       max-width: 100%;
       width: 100%;
-      height: calc(100vh - 60px);
+      // height: calc(100vh - 60px);
+      height: 100vh;
       margin: 0 0 3rem;
       svg {
         fill: $secondary-color;

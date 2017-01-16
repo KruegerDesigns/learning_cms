@@ -68,7 +68,7 @@
       <p><a href="#" class="cta-button cta-filled">Call To Action</a></p>
     </div>
     <div class="img-overlay"></div>
-    <img src="https://media.giphy.com/media/vEiuhblutg6LS/giphy.gif" alt="" class="background" />
+    <img src="/img/clouds-50mb.gif" alt="" class="background" />
   </div>
   
   <div class="container">
@@ -120,7 +120,7 @@
     <h2>This is an HTML5 audio element</h2>
     <div class="audio-wrap">
       <audio controls>
-        <source src="http://jankenpopp.free.fr/choco/13%20-%20Gamekar.mp3" type="audio/mpeg">
+        <source src="fake.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </div>
@@ -144,40 +144,40 @@
   <div class="stripe">
     <div class="container">
       <h2>Contact Form</h2>
-      <form action="/">
+      <form action="/database-results.html" method="post">
         <label for="contact_name">Name</label>
         <input type="text" name="contact_name" id="contact_name" placeholder="Full Name" required/>
         
         <label for="contact_email">Email</label>
         <input type="email" name="contact_email" id="contact_email" placeholder="Email Address" required/>
 
-        <label for="contact_options">Select an Option</label>
+        <label for="contact_options">How big is the project?</label>
         <div class="select-wrap">
           <select name="contact_options" id="contact_options">
             <option disabled>Available Options</option>
-            <option value="Option One">Option One</option>
-            <option value="Option Two">Option Two</option>
-            <option value="Option Three">Option Three</option>
+            <option value="Small - Brochure or Portfolio Website">Small - Brochure or Portfolio Website</option>
+            <option value="Medium - Blog or Lead Generating Website">Medium - Blog or Lead Generating Website</option>
+            <option value="Large - E-commerce or Web App Website">Large - E-commerce or Web App Website</option>
           </select>
         </div>
         
         <fieldset>
-          <legend>Choose one or two:</legend>
+          <legend>Is this a personal, or a business Website?</legend>
           <label for="contact_radio_one">
-            <input type="radio" name="contact_radio" id="contact_radio_one" />
-            Radio One
+            <input type="radio" name="contact_radio" id="contact_radio_one" value="Personal"/>
+            Personal
           </label>
           
           <label for="contact_radio_two">
-            <input type="radio" name="contact_radio" id="contact_radio_two" />
-            Radio Two
+            <input type="radio" name="contact_radio" id="contact_radio_two" value="Business"/>
+            Business
           </label>
         </fieldset>
         
         <label for="contact_message">Message</label>
-        <textarea name="contact_message" id="contact_message">Type message here...</textarea>
+        <textarea name="contact_message" id="contact_message" placeholder="Type message here..."></textarea>
         
-        <input type="text" class="contact-business" />
+        <input type="text" class="contact-business" name="contact_business" />
         
         <button type="submit" class="cta-button cta-filled">Send Message</button>
       </form>

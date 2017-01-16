@@ -62,10 +62,6 @@ table {
   html {
     font-size: 16px; } }
 
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 14px; } }
-
 .flex-grid {
   margin-bottom: 1rem;
   display: flex; }
@@ -138,12 +134,16 @@ a {
   #wrap .stripe .container {
     max-width: 750px; }
   #wrap .stripe.footer {
+    margin-top: 3rem;
     margin-bottom: 0; }
+    #wrap .stripe.footer .container {
+      max-width: 960px; }
   #wrap .stripe + .stripe {
     margin-top: -2rem;
     background-color: #f1f1f1; }
 
 #wrap .container {
+  position: relative;
   max-width: 960px;
   width: 90%;
   margin: 0 auto; }
@@ -176,9 +176,13 @@ a {
       /* 16:9 */ }
   #wrap .container .audio-wrap {
     display: inline-flex;
-    align-content: center;
     padding: 0;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    height: auto;
+    min-height: 1.5rem; }
+    #wrap .container .audio-wrap audio {
+      display: inline-block;
+      height: auto; }
   #wrap .container blockquote {
     position: relative;
     margin: 1.5rem 0;
@@ -223,7 +227,7 @@ a {
       padding: .5rem .5rem; }
     #wrap .container form .select-wrap {
       display: block;
-      width: 33%;
+      min-width: 33%;
       padding: 0;
       margin-bottom: 1rem; }
       #wrap .container form .select-wrap select {
@@ -267,30 +271,30 @@ a {
       padding: .25rem .5rem;
       border: 1px solid #ddd; }
   #wrap .container.navbar {
-    display: absolute;
+    position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     max-width: 100%;
     width: 100%;
+    height: 80px;
     margin: 0;
-    background-color: #ddd; }
-    #wrap .container.navbar.scroll-hide {
-      position: fixed;
-      border-bottom: 1px solid #d0d0d0;
-      z-index: 10; }
+    background-color: rgba(0, 0, 0, 0.15); }
     #wrap .container.navbar nav {
       max-width: 960px;
       width: 90%;
+      height: 100%;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap; }
       #wrap .container.navbar nav a {
-        height: 60px;
+        height: 100%;
+        min-height: 60px;
         min-width: 2rem;
         display: inline-flex;
         align-items: center;
         text-align: center;
-        color: #6a6a6a;
+        color: #ddd;
         padding: .25rem .5rem;
         font-size: .8rem;
         font-weight: 600;
@@ -298,25 +302,41 @@ a {
         text-decoration: none;
         letter-spacing: 1px; }
         #wrap .container.navbar nav a:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-          color: #75a4f5; }
+          background-color: #4585F2;
+          color: #fff; }
       #wrap .container.navbar nav a.logo {
-        justify-content: center; }
+        justify-content: center;
+        padding: 0 1rem; }
         #wrap .container.navbar nav a.logo img {
           height: 1rem;
           width: auto; }
         #wrap .container.navbar nav a.logo svg {
-          fill: #6a6a6a; }
+          fill: #ddd; }
           #wrap .container.navbar nav a.logo svg.menu-icon {
             height: 1rem;
             width: 1rem; }
         #wrap .container.navbar nav a.logo:hover svg {
-          fill: #75a4f5; }
+          fill: #fff; }
+    #wrap .container.navbar.nav-scroll {
+      position: fixed;
+      border-bottom: 1px solid #d0d0d0;
+      height: auto;
+      background-color: #ddd; }
+      #wrap .container.navbar.nav-scroll nav a {
+        color: #6a6a6a; }
+        #wrap .container.navbar.nav-scroll nav a svg {
+          fill: #6a6a6a; }
+        #wrap .container.navbar.nav-scroll nav a:hover {
+          color: #fff; }
+          #wrap .container.navbar.nav-scroll nav a:hover svg {
+            fill: #fff; }
+    #wrap .container.navbar.nav-top {
+      position: absolute; }
   #wrap .container.hero {
     position: relative;
     max-width: 100%;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: 100vh;
     margin: 0 0 3rem; }
     #wrap .container.hero svg {
       fill: #ddd; }
