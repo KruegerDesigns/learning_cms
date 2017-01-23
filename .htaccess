@@ -1,3 +1,8 @@
+#  MediaElement.js Setup
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm
+
 # Run PHP code in HTML documents
 AddType application/x-httpd-php .html
 
