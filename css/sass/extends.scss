@@ -1,0 +1,27 @@
+// Extends
+.block-style {
+  background: $secondary-color-light;
+  border: 0;
+  border-left: 10px solid $secondary-color;
+  padding: 1rem;
+  border-radius: 1px;
+}
+.cta-button {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0 1rem;
+  text-decoration: none;
+  transition: background-color .25s;
+  border-radius: .25rem;
+  height: 3rem;
+  line-height: 3rem;
+  &.cta-filled {
+    color: #f5f5f5;
+    background-color: $cta-color;
+    border: 0;
+    &:hover {
+      transition: background-color .25s;
+      background-color: lighten($cta-color, 10);
+    }
+  }
+}

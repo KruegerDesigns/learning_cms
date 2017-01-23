@@ -1,0 +1,32 @@
+@media (max-width: 768px) {
+  [class*="flex-grid"] {
+    display: block;
+    .col {
+      width: 100%;  
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #wrap {
+    .container {
+      
+      figure {
+        width: 100%;
+        img {
+          display: block;
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+      
+      form {
+        > input, .select-wrap {
+          width: 100%;
+        }
+      }
+      
+    }
+  }
+}

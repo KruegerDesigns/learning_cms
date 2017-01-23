@@ -1,0 +1,28 @@
+// Variables
+// @import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Fjalla+One');
+// $font-family-fancy-1: 'Fjalla One', sans-serif;
+// $font-family-fancy-2: 'Amatic SC', cursive;
+
+// @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i');
+$font-family-headings: 'Lato', sans-serif;
+// $font-family-headings: 'Noto Serif', serif;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i');
+$font-family-content: 'Lato', sans-serif;
+
+// colors:
+// light gray: #ddd
+// light green: #bbffdd
+// light red: #ffbbbb
+// light/yellow green: #bbffbb
+// light royal blue: #bbddff
+// light violet: #bbbbff
+// light orange: #ffddbb
+// light green: #bbffdd
+
+$secondary-color: #ddd;
+$secondary-color-light: lighten($secondary-color, 11) ;
+
+$text-light-color: darken($secondary-color, 45);
+$cta-color: #4585F2;
+// $cta-color: $text-light-color;

@@ -1,0 +1,25 @@
+// Responsive Flex-box Grid:
+// https://css-tricks.com/dont-overthink-flexbox-grids
+.flex-grid {
+  margin-bottom: 1rem;
+  display: flex;
+  .col {
+    flex: 1;
+  }
+}
+.flex-grid-thirds {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  .col {
+    width: 32%;
+  }
+}
+.flex-grid-halfs {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  .col {
+    width: 48%;
+  }
+}
