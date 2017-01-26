@@ -22,47 +22,10 @@
   <div class="container">
   
     <h1>Database Results</h1>
+    <p>On this page I'm going to try and echo out different MySQL commands from functions I've made. Use <a href="/form-processing">the form</a> to see more entrees.</p>
 
-    <?php
-      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $par_name = htmlspecialchars($_POST['contact_name']);
-        $par_email = htmlspecialchars($_POST['contact_email']);
-        $par_options = htmlspecialchars($_POST['contact_options']);
-        $par_radio = htmlspecialchars($_POST['contact_radio']);
-        $par_message = htmlspecialchars($_POST['contact_message']);
-        // Make this a function call, then move it to an include in the header.
-        AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message);
-        // Show what was just added
-    ?>
-      <div class="table-wrap">
-        <table>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Options</th>
-            <th>Radio</th>
-            <th>Message</th>
-          </tr>
-          <tr>
-            <td><?= db_last_insert_id(); ?></td>
-            <td><?= $par_name ?></td>
-            <td><?= $par_email ?></td>
-            <td><?= $par_options ?></td>
-            <td><?= $par_radio ?></td>
-            <td><?= $par_message ?></td>
-          </tr>
-        </table>
-      </div>
-    <?php
-      } else {
-        echo "<p>No new post data detected!</p>";
-      }
-    ?>
-    
-    <h2>Current Data Entrees (Leads Table)</h2>
-    Below is a table of the current data that has been posted through the contact form.
-
+    <h2>The Latest Entry</h2>
+    <p>Below is the last entry posted through the contact form.</p>
     <div class="table-wrap">
       <table>
         <tr>
@@ -72,6 +35,24 @@
           <th>Options</th>
           <th>Radio</th>
           <th>Message</th>
+          <th>Date Posted</th>
+        </tr>
+        <?php EchoNewestLeads(); ?>
+      </table>
+    </div>
+    
+    <h2>Current Data Entrees (Leads Table)</h2>
+    Below is a table of the current data that has been posted through the contact form.
+    <div class="table-wrap">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Options</th>
+          <th>Radio</th>
+          <th>Message</th>
+          <th>Date Posted</th>
         </tr>
         <?php EchoAllLeads(); ?>
       </table>

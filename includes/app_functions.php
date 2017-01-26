@@ -7,8 +7,7 @@ function AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message)
   // Insert Statement
   try {
     // prepare sql and bind parameters
-    $stmt = $pdo->prepare("INSERT INTO Leads (name, email, options, radio, message) 
-    VALUES (:name, :email, :options, :radio, :message)");
+    $stmt = $pdo->prepare("INSERT INTO Form (name, email, options, radio, message, dateposted) VALUES (:name, :email, :options, :radio, :message, now())");
     $stmt->bindParam(':name', $name);
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':options', $options);
@@ -30,8 +29,8 @@ function AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message)
 function EchoAllLeads() {
   // The PDO connection
   global $pdo;
-  // Select and show the data from Leads
-  $sql = 'SELECT id, name, email, options, radio, message FROM Leads';
+  // Select and show the data from the Form table
+  $sql = 'SELECT id, name, email, options, radio, message, dateposted FROM Form';
   $result = $pdo->query($sql);
   if ($result->num_rows >= 0) {
     // output data of each row
@@ -44,10 +43,30 @@ function EchoAllLeads() {
         echo "<td>".$row["options"]."</td>";
         echo "<td>".$row["radio"]."</td>";
         echo "<td>".$row["message"]."</td>";
+        echo "<td>".$row["dateposted"]."</td>";
       echo "<tr>";
     }
   } else {
     echo "0 results";
+  }
+}
+
+function EchoNewestLeads() {
+  // The PDO connection
+  global $pdo;
+  // Select and show the data from the Form table
+  $sql = 'SELECT id, name, email, options, radio, message, dateposted FROM Form ORDER BY dateposted DESC LIMIT 1';
+  $results = $pdo->query($sql);
+  foreach($results as $result) {
+    echo "<tr>";
+      echo "<td>".$result["id"]."</td>";
+      echo "<td>".$result["name"]."</td>";
+      echo "<td>".$result["email"]."</td>";
+      echo "<td>".$result["options"]."</td>";
+      echo "<td>".$result["radio"]."</td>";
+      echo "<td>".$result["message"]."</td>";
+      echo "<td>".$result["dateposted"]."</td>";
+    echo "<tr>";
   }
 }
 
@@ -83,5 +102,8 @@ function validateFeedbackForm($arr) {
   $headers = "From: no-reply@kruegerdesigns.com" . "\r\n";
   mail($to, $subject, $contact_message, $headers);
   header("Location: http:/thank-you");
+  
+  // Make this a function call, then move it to an include in the header.
+  AddLeads($contact_name, $contact_email, $contact_options, $contact_radio, $contact_message);
   exit;
 }
