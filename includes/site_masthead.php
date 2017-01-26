@@ -1,7 +1,9 @@
 <?php if ($page_template == "home") { ?>
   <div class="container masthead">
     <div class="content-overlay">
-      <svg class="menu-icon"><use xlink:href="#icon-logo"/></svg>
+      <div class="logo">
+        <svg><use xlink:href="#icon-logo"/></svg>
+      </div>
       <p class="heading">This is a Hero Heading</p>
       <p>This is the content area in the Hero container.</p>
       <p><a href="#" class="cta-button cta-filled">Call To Action</a></p>
@@ -12,7 +14,9 @@
 <?php } else { ?>
   <div class="container masthead">
     <div class="content-overlay">
-      <svg class="menu-icon"><use xlink:href="#icon-logo"/></svg>
+      <div class="logo">
+        <svg><use xlink:href="#icon-logo"/></svg>
+      </div>
       <p class="heading"><?= $page_name ?></p>
     </div>
     <div class="img-overlay"></div>

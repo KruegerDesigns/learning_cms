@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 #wrap {
   .stripe.site-navbar {
     position: fixed;
@@ -14,7 +10,7 @@
     background-color: #ddd;
     .container {
       width: auto;
-      max-width: 960px;
+      max-width: 1440px;
       margin: 0 auto;
       .navbar {
         width: 100%;
@@ -37,6 +33,7 @@
           }
           &:hover {
             background-color: $cta-color;
+            transition: background-color .25s ease;
             color: #fff;
             svg {
               fill: #fff;
@@ -47,6 +44,10 @@
         }
         .nav-toggle {
           display:none;
+          a:hover {
+            color: $text-light-color;
+            background-color: transparent;
+          }
         }
         
         .nav-top {
@@ -67,7 +68,7 @@
                   color: $secondary-color;
                   background-color: $cta-color;
                 }
-                ul.subnav {
+                ul {
                   display: none;
                   &.expand {
                     display: block;
@@ -81,6 +82,8 @@
                       color: $secondary-color;
                       &:hover {
                         color:#fff;
+                        background-color: lighten($cta-color, 5);
+                        transition: background-color .25s ease;
                       }
                     }
                   }
@@ -96,6 +99,23 @@
         
       } // .navbar
     } // .container
+
+    &.nav-scroll {
+      background-color: darken($secondary-color, 5) !important;
+      transition: background-color .25s ease;
+    }
+    &.nav-top {
+      background-color: #222222;
+      transition: background-color .25s ease;
+      .container .navbar a, 
+      .container .navbar span {
+        color: lighten($secondary-color, 5);
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
   } // .stripe
 } // #wrap
 
@@ -107,6 +127,11 @@
       .container {
         .navbar {
 
+          a {
+            padding: 0 1rem;
+            font-size: 1rem;
+          }
+
           .nav-top {
             display: none;
             &.open {
@@ -115,10 +140,10 @@
               top: 60px;
               left: 0;
               display: flex;
-              align-items: center;
+              align-items: flex-start;
               height: calc(100vh - 60px);
               width: 100%;
-              background-color: rgba(30,30,30, .9);
+              background-color: #020202;
               overflow: auto;
               nav {
                 max-height: calc(100vh - 60px);
@@ -160,7 +185,8 @@
           .nav-toggle {
             display: flex;
             a.active {
-              background-color: rgba(30,30,30, .9);
+              color: #fff;
+              background-color: #020202;
             }
           }
           

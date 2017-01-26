@@ -12,9 +12,9 @@
   padding: 0 1rem;
   text-decoration: none;
   transition: background-color .25s;
-  border-radius: .25rem;
-  height: 3rem;
-  line-height: 3rem;
+  // border-radius: .25rem;
+  height: 50px;
+  line-height: 50px;
   &.cta-filled {
     color: #f5f5f5;
     background-color: $cta-color;
@@ -23,5 +23,24 @@
       transition: background-color .25s;
       background-color: lighten($cta-color, 10);
     }
+  }
+}
+.darken {
+  position: relative;
+  z-index: 1;
+  &:before {
+    position: absolute;
+    z-index: 2;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .65);
+  }
+  .container {
+    position: relative;
+    z-index: 3;
+    color: $secondary-color;
   }
 }

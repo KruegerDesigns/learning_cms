@@ -1,10 +1,16 @@
+<?php
+  if ($page_nav_background_color == "") {
+    $page_nav_background_color = "#ababab";
+  }
+?>
+
 <div class="stripe site-navbar">
   <div class="container">
     <div class="navbar">
 
       <div class="logo">
-        <a href="#">
-          Business Name        
+        <a href="/">
+          Learning PHP &amp; MySQL
         </a>
       </div>
       

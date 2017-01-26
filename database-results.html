@@ -1,10 +1,11 @@
-<?php include 'includes/functions.php'; ?>
+<?php include 'includes/app_functions.php'; ?>
 <?php 
   // Page Settings
   $page_title = "Modern Theme - Form Results";
   $page_name = "Database Experiments";
   $page_template = "detail";
   $page_masthead_image_url = "/img/database.jpg";
+  $page_nav_background_color = "#a0c2d0";
 ?>
 
 <?php include 'includes/site_head.php'; ?>
@@ -72,30 +73,14 @@
           <th>Radio</th>
           <th>Message</th>
         </tr>
-        <?php EchoLeads(); ?>
+        <?php EchoAllLeads(); ?>
       </table>
     </div>
 
   </div>
   
-  <div class="stripe footer">
-    <div class="container">
-      <div class="flex-grid">
-        <div class="col">
-          <p class="heading"><strong>Navigation</strong></p>
-          <?php include 'includes/site_nav.php'; ?>
-        </div>
-        <div class="col">
-          <p class="heading"><strong>Contact &amp; Copyright</strong></p>
-          <p>
-            Phone: (123) 456-7890
-            <br>Designed and Developed by Adam Krueger
-            <br> &copy; Copyright 2016-2017
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Footer -->
+  <?php include 'includes/site_footer.php'; ?>
     
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
