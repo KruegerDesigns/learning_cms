@@ -1,16 +1,29 @@
+# Check out https://github.com/phanan/htaccess 
+# for help with htaccess!
+
 #  MediaElement.js Setup
 AddType video/ogg .ogv
 AddType video/mp4 .mp4
 AddType video/webm .webm
 
-# Run PHP code in HTML documents
-AddType application/x-httpd-php .html
-
 RewriteEngine On
+
+# Route page variable names to actual pages
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php?page_url=$1 [QSA,L]
+
+# Remove the .php file extension
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^/]+)/$ $1.php
-RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.html
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=301,L]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]

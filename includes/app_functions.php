@@ -1,4 +1,5 @@
 <?php
+
 include 'app_pdo_connection.php';
 
 function AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message) {
@@ -75,8 +76,12 @@ function db_last_insert_id() {
   return $pdo->lastInsertId();
 }
 
-function validateFeedbackForm($arr) {
-  extract($arr);
+function validateFeedbackForm($post) {
+  $contact_name = htmlspecialchars($post['contact_name']);
+  $contact_email = htmlspecialchars($post['contact_email']);
+  $contact_options = htmlspecialchars($post['contact_options']);
+  $contact_radio = htmlspecialchars($post['contact_radio']);
+  $contact_message = htmlspecialchars($post['contact_message']);
 
   if(!isset($contact_name, $contact_email, $contact_message)) return;
 
@@ -93,7 +98,7 @@ function validateFeedbackForm($arr) {
 
   // empty field spam test
   if(trim($contact_business) != null) {
-    header("Location: http:/");
+    header("Location: /");
     die;  
   }
 
@@ -101,7 +106,7 @@ function validateFeedbackForm($arr) {
   $to = "adam@kruegerdesigns.com";
   $headers = "From: no-reply@kruegerdesigns.com" . "\r\n";
   mail($to, $subject, $contact_message, $headers);
-  header("Location: http:/thank-you");
+  header("Location: /thank-you.php");
   
   // Make this a function call, then move it to an include in the header.
   AddLeads($contact_name, $contact_email, $contact_options, $contact_radio, $contact_message);

@@ -21,3 +21,9 @@ You can request a pull from: git@bitbucket.org:kruegerdesigns/modern-theme.git
 ### Who do I talk to? ###
 
 * @kruegerdesigns on Twitter
+
+### Adding Pages and Links ###
+
+Add new pages to the pages directory.
+To link to that page, update the site_nav.php partial. After the link is created make sure to add that page to the router in index.php.
+

@@ -214,6 +214,7 @@ a {
     table {
       width: calc(100% + 1px);
       background-color: $secondary-color-light;
+      color: $text-light-color;
       tr {
         th {
           background-color: $secondary-color;
@@ -221,6 +222,7 @@ a {
           text-align: left;
           padding: .25rem .5rem;
           font-weight: 600;
+          color: darken($text-light-color, 5);
           // font-family: $font-family-headings;
         }
         td {

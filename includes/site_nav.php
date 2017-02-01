@@ -20,6 +20,7 @@
   <ul>
     <li><a href="/form-processing">The Form</a></li>
     <li><a href="/database-results">Database Results</a></li>
+    <li><a href="/lets-edit-stuff">Let's Edit Stuff</a></li>
     <li><a href="/all-the-things">All The Things</a></li>
   </ul>
 </nav>
