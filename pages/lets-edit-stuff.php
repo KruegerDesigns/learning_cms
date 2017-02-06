@@ -78,7 +78,7 @@
   </blockquote>
 </div>
 
-<div class="stripe darken" style="background-image: url('/img/contact-photo.jpg')">
+<div class="stripe darken" style="background-image: url('/img/contact-photo.jpg'); background-size: cover;">
   <div class="container">
     <h2>Contact Form</h2>
     <form action="#" method="post">

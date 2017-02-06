@@ -10,35 +10,18 @@
   // Site Settings
   $site_title = "Modern Theme";
 
-  // Page Settings
-  $page_parent = "";
-  $page_path = $page_parent."";
-  $page_title = $site_title."";
-  $page_name = "";
-  $page_template = "";
-  $page_body_class = "";
-  $page_masthead_image_url = "";
-
+  // Get the page name and match it with the correct page partial.
+  // These partials will be replaced with a database eventually.
   $page_url=$_GET['page_url'];
+  $pages = glob('pages/*.php',GLOB_BRACE);
 
-  if($page_url=='all-the-things') {
-      include('pages/all-the-things.php'); // Home page
-  } else if($page_url=='database-results') {
-      include('pages/database-results.php'); // Login page
-  } else if($page_url=='form-processing') {
-      include('pages/form-processing.php'); // Terms page
+  if (in_array('pages/'.$page_url.'.php', $pages)) {
+    include('pages/'.$page_url.'.php');
   } else if($page_url=='') {
-      include('pages/home.php'); // Terms page
-  } else if($page_url=='lets-edit-stuff') {
-      include('pages/lets-edit-stuff.php'); // Terms page
-  } else if($page_url=='thank-you') {
-      include('pages/thank-you.php'); // Terms page
-  } else if($page_url=='site-map') {
-      include('pages/site-map.php'); // Terms page
+    include('pages/home.php');
   } else {
-      include('pages/error.php'); // error page
+    include('pages/error.php');
   }
-
 ?>
 
 <?php include 'includes/site_head.php'; ?>
