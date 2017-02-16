@@ -1,9 +1,9 @@
 @media (max-width: 768px) {
   [class*="flex-grid"] {
     display: block;
-    .col {
-      width: 100%;  
-    }
+  }
+  [class*="flex-grid"] .col {
+    width: 100%;  
   }
 }
 
