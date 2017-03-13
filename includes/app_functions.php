@@ -2,6 +2,29 @@
 
 include 'app_pdo_connection.php';
 
+// This function creates the table "Form" and the starting fields in the database.
+function CreateTable() {
+  // The PDO connection
+  global $pdo;
+  // Create Statement
+  $table = "Form";
+  try {
+    $sql = "CREATE TABLE IF NOT EXISTS $table (
+    ID INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR( 250 ) NOT NULL,
+    email VARCHAR( 150 ) NOT NULL, 
+    options VARCHAR( 150 ) NOT NULL, 
+    radio VARCHAR( 150 ) NOT NULL, 
+    message VARCHAR( 500 ) NOT NULL,
+    dateposted DATETIME NOT NULL);" ;
+    $pdo->exec($sql);
+    print("Created $table Table.\n");
+  } catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+  }
+}
+
+// This function adds leads from the form into the database.
 function AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message) {
   // The PDO connection
   global $pdo;
@@ -27,6 +50,7 @@ function AddLeads($par_name, $par_email, $par_options, $par_radio, $par_message)
   }
 }
 
+// This function loops through the leads and creates a table showing all the data in the database.
 function EchoAllLeads() {
   // The PDO connection
   global $pdo;
@@ -52,6 +76,7 @@ function EchoAllLeads() {
   }
 }
 
+// This function shows the most latest database entry based on the record's timestamp.
 function EchoNewestLeads() {
   // The PDO connection
   global $pdo;
@@ -71,11 +96,13 @@ function EchoNewestLeads() {
   }
 }
 
+// This is a simple function to show the latest ID of the record entered.
 function db_last_insert_id() {
   global $pdo;
   return $pdo->lastInsertId();
 }
 
+// This is PHP form validation and form processor.
 function validateFeedbackForm($post) {
   $contact_name = htmlspecialchars($post['contact_name']);
   $contact_email = htmlspecialchars($post['contact_email']);
@@ -106,7 +133,7 @@ function validateFeedbackForm($post) {
   $to = "adam@kruegerdesigns.com";
   $headers = "From: no-reply@kruegerdesigns.com" . "\r\n";
   mail($to, $subject, $contact_message, $headers);
-  header("Location: /thank-you.php");
+  header("Location: /thank-you");
   
   // Make this a function call, then move it to an include in the header.
   AddLeads($contact_name, $contact_email, $contact_options, $contact_radio, $contact_message);

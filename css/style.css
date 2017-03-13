@@ -518,8 +518,8 @@ a {
 @media (max-width: 768px) {
   [class*="flex-grid"] {
     display: block; }
-    [class*="flex-grid"] .col {
-      width: 100%; } }
+  [class*="flex-grid"] .col {
+    width: 100%; } }
 
 @media only screen and (max-width: 480px) {
   #wrap .container figure {

@@ -7,6 +7,11 @@
     $errorMsg = validateFeedbackForm($_POST);
   }
 
+  if(isset($_POST['createDatabase'])) {
+    // call form handler
+    CreateTable();
+  }
+
   // Site Settings
   $site_title = "Modern Theme";
 
