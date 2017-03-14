@@ -118,7 +118,7 @@ h4 {
   font-size: 1.25rem; }
 
 small, .font_small {
-  font-size: 0.75rem; }
+  font-size: 0.8rem; }
 
 h1 + p,
 h2 + p,
@@ -155,6 +155,12 @@ i, em {
   justify-content: space-between; }
   .flex-grid-halfs .col {
     width: 48%; }
+
+.flex-grid .col.vertical-align,
+.flex-grid-thirds .col.vertical-align,
+.flex-grid-halfs .col.vertical-align {
+  display: flex;
+  align-items: center; }
 
 * {
   box-sizing: border-box; }
@@ -381,14 +387,45 @@ a {
         background-size: cover;
         background-position: center; }
 
-#wrap .footer nav ul, #wrap .footer ul {
+#wrap .footer .container nav ul, #wrap .footer .container ul {
   display: flex;
+  justify-content: center;
   list-style: none;
   margin: 0; }
-  #wrap .footer nav ul li, #wrap .footer ul li {
+  #wrap .footer .container nav ul li, #wrap .footer .container ul li {
     display: block;
     width: auto;
-    margin: .5rem; }
+    margin: .25rem .5rem; }
+    #wrap .footer .container nav ul li a, #wrap .footer .container ul li a {
+      text-transform: uppercase;
+      font-size: .8rem;
+      font-weight: 600;
+      text-decoration: none; }
+
+#wrap .footer .container > div {
+  margin: 3rem 0; }
+  #wrap .footer .container > div .flex-grid-thirds .col svg.circle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .5rem;
+    width: 3rem;
+    height: 3rem;
+    padding: .75rem;
+    border-radius: 49.99%;
+    background-color: #222;
+    fill: #ddd;
+    flex-shrink: 0; }
+  #wrap .footer .container > div .flex-grid-thirds .col p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: .8rem;
+    font-weight: 600;
+    margin-bottom: 0; }
+    #wrap .footer .container > div .flex-grid-thirds .col p a {
+      text-transform: uppercase;
+      text-decoration: none; }
 
 .home #wrap .container.masthead {
   height: 100vh;
@@ -469,7 +506,7 @@ a {
     background-color: #d0d0d0 !important;
     transition: background-color .25s ease; }
   #wrap .stripe.site-navbar.nav-top {
-    background-color: #222222;
+    background-color: #222;
     transition: background-color .25s ease; }
     #wrap .stripe.site-navbar.nav-top .container .navbar a,
     #wrap .stripe.site-navbar.nav-top .container .navbar span {

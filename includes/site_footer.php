@@ -1,7 +1,25 @@
 <div class="stripe footer">
   <div class="container">
 
-    <div class="footer-navigation">
+    <div class="footer-contact">
+      <div class="flex-grid-thirds">
+        <div class="col vertical-align">
+          <svg class="circle-icon"><use xlink:href="#icon-mail"/></svg>
+          <p><a href="/invalid">Send us a message</a></p>
+        </div>
+        <div class="col vertical-align">
+          <svg class="circle-icon"><use xlink:href="#icon-location"/></svg>
+          <p><a href="/invald">1234 100th Street <br>San Diego, CA 90123</a></p>
+        </div>
+        <div class="col vertical-align">
+          <svg class="circle-icon"><use xlink:href="#icon-call"/></svg>
+          <p>Phone: &nbsp; <a href="/invalid">(123) 456-7890</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-navigation centered">
+      <h3>Find what you're looking for?</h3>
       <?php include 'includes/site_nav.php'; ?>
       <ul>
         <li><a href="#">About Us</a></li>
@@ -12,16 +30,8 @@
       </ul>
     </div>
 
-    <div class="footer-contact">
-      <h3><strong>Contact Info</strong></h3>
-      <p>
-        Phone: (123) 456-7890
-        <br>1234 100th Street
-        <br>San Diego, CA 90123
-        <br>Designed &amp; Developed 
-        <br>by Adam Krueger
-        <br> &copy; Copyright 2016-2017
-      </p>
+    <div class="footer-copyright">
+      <p class="centered font_small">&copy; Copyright 2016-2017</p>
     </div>
 
   </div>

@@ -23,3 +23,12 @@
     width: 48%;
   }
 }
+
+.flex-grid,
+.flex-grid-thirds,
+.flex-grid-halfs {
+  .col.vertical-align {
+    display: flex;
+    align-items: center;
+  }
+}
