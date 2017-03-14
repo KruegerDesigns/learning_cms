@@ -24,8 +24,7 @@
       <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="/terms-privacy-policy">Terms &amp; Privacy</a></li>
         <li><a href="#">Site Map</a></li>
       </ul>
     </div>

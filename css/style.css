@@ -185,7 +185,8 @@ a {
     padding: 2rem 0;
     margin: 2rem 0; }
     #wrap .stripe .container {
-      max-width: 750px; }
+      max-width: 750px;
+      margin: 0 auto; }
     #wrap .stripe.footer {
       margin-top: 4rem;
       margin-bottom: 0; }
@@ -202,7 +203,7 @@ a {
     position: relative;
     max-width: 960px;
     width: 90%;
-    margin: 0 auto; }
+    margin: 3rem auto 4rem; }
     #wrap .container img {
       max-width: 100%; }
     #wrap .container ul, #wrap .container ol {
@@ -391,41 +392,45 @@ a {
   display: flex;
   justify-content: center;
   list-style: none;
-  margin: 0; }
+  margin: 0;
+  flex-wrap: wrap; }
   #wrap .footer .container nav ul li, #wrap .footer .container ul li {
-    display: block;
+    display: flex;
     width: auto;
     margin: .25rem .5rem; }
     #wrap .footer .container nav ul li a, #wrap .footer .container ul li a {
       text-transform: uppercase;
       font-size: .8rem;
       font-weight: 600;
-      text-decoration: none; }
+      text-decoration: none;
+      white-space: nowrap; }
 
 #wrap .footer .container > div {
-  margin: 3rem 0; }
-  #wrap .footer .container > div .flex-grid-thirds .col svg.circle-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: .5rem;
-    width: 3rem;
-    height: 3rem;
-    padding: .75rem;
-    border-radius: 49.99%;
-    background-color: #222;
-    fill: #ddd;
-    flex-shrink: 0; }
-  #wrap .footer .container > div .flex-grid-thirds .col p {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: .8rem;
-    font-weight: 600;
-    margin-bottom: 0; }
-    #wrap .footer .container > div .flex-grid-thirds .col p a {
-      text-transform: uppercase;
-      text-decoration: none; }
+  margin: 2rem 0; }
+  #wrap .footer .container > div .flex-grid-thirds .col {
+    margin: 0 0 1rem 0; }
+    #wrap .footer .container > div .flex-grid-thirds .col svg.circle-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: .5rem;
+      width: 3rem;
+      height: 3rem;
+      padding: .75rem;
+      border-radius: 49.99%;
+      background-color: #222;
+      fill: #ddd;
+      flex-shrink: 0; }
+    #wrap .footer .container > div .flex-grid-thirds .col p {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 0; }
+      #wrap .footer .container > div .flex-grid-thirds .col p a {
+        text-transform: uppercase;
+        text-decoration: none; }
 
 .home #wrap .container.masthead {
   height: 100vh;
