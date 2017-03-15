@@ -8,7 +8,10 @@ var autoprefixerOptions = {
 };
 
 gulp.task('sass', function(){
-  return gulp.src('css/sass/style.scss')
+  return gulp.src([
+    'css/sass/colors/yellow-purple.scss',
+    'css/sass/style.scss'
+    ])
     .pipe(autoprefixer())
     // .pipe(autoprefixer(autoprefixerOptions))
     .pipe(sass().on('error', sass.logError))
