@@ -1,12 +1,19 @@
 <?php 
   include 'includes/app_functions.php';
 
-  // execution starts here
+  // Lead Form
   if(isset($_POST['sendForm'])) {
     // call form handler
     $errorMsg = validateFeedbackForm($_POST);
   }
 
+  // Anonymous Form
+  if(isset($_POST['sendAnonymous'])) {
+    // call form handler
+    $errorMsg = validateSendAnonymous($_POST);
+  }
+
+  // Databse Setup Script
   if(isset($_POST['createDatabase'])) {
     // call form handler
     CreateTable();

@@ -131,11 +131,48 @@ function validateFeedbackForm($post) {
 
   // send email and redirect
   $to = "adam@kruegerdesigns.com";
-  $headers = "From: no-reply@kruegerdesigns.com" . "\r\n";
+  $headers = "From: $contact_email" . "\r\n";
   mail($to, $subject, $contact_message, $headers);
   header("Location: /thank-you");
   
   // Make this a function call, then move it to an include in the header.
   AddLeads($contact_name, $contact_email, $contact_options, $contact_radio, $contact_message);
+  exit;
+}
+
+// This is PHP form validation and form processor.
+function validateSendAnonymous($post) {
+  $contact_name = htmlspecialchars($post['contact_name']);
+  $contact_email = htmlspecialchars($post['contact_email']);
+  $contact_subject = htmlspecialchars($post['contact_subject']);
+  $contact_message = htmlspecialchars($post['contact_message']);
+
+  if(!isset($contact_name, $contact_email, $contact_subject, $contact_message)) return;
+
+  if(!$contact_name) {
+    return "Please enter your Name";
+  }
+  if(!preg_match("/^\S+@\S+$/", $contact_email)) {
+    return "Please enter a valid Email address";
+  }
+  if(!$subject) {
+    $subject = "Anonymous Einstein Message";
+  }
+  if(!$contact_message) {
+    return "Please enter you message in the \"Message\" box below.";
+  }
+
+  // empty field spam test
+  if(trim($contact_business) != null) {
+    header("Location: /");
+    die;  
+  }
+
+  // send email and redirect
+  $to = "adam@kruegerdesigns.com";
+  $headers = "From: $contact_email" . "\r\n";
+  mail($to, $subject, $contact_message, $headers);
+  header("Location: /thank-you");
+  
   exit;
 }
