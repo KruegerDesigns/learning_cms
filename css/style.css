@@ -13,6 +13,7 @@
   padding: 0 1rem;
   text-decoration: none;
   transition: background-color .25s;
+  border-radius: .15rem;
   height: 50px;
   line-height: 50px; }
   .cta-button.cta-filled, #wrap .container form button {
@@ -314,7 +315,7 @@ a {
         height: 50px; }
     #wrap .container .table-wrap {
       max-width: 100%;
-      overflow-x: auto;
+      overflow-x: hidden;
       margin-bottom: 2rem;
       margin-top: 1rem;
       border: 1px solid #ddd; }
@@ -571,6 +572,8 @@ a {
     display: block; }
   [class*="flex-grid"] .col {
     width: 100%; }
+  #wrap .container .table-wrap {
+    overflow-x: auto; }
   #wrap .footer .container > div .flex-grid-thirds .col {
     justify-content: center; } }
 

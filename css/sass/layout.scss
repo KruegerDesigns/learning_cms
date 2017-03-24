@@ -208,7 +208,7 @@ a {
 
     .table-wrap {
       max-width: 100%;
-      overflow-x: auto;
+      overflow-x: hidden;
       margin-bottom: 2rem;
       margin-top: 1rem;
       border: 1px solid $secondary-color;

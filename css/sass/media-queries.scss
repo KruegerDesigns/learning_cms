@@ -5,9 +5,17 @@
   [class*="flex-grid"] .col {
     width: 100%;  
   }
-  #wrap .footer .container > div .flex-grid-thirds .col {
-    justify-content: center;
+  #wrap {
+    .container {
+      .table-wrap {
+        overflow-x: auto;
+      }
+    }
+    .footer .container > div .flex-grid-thirds .col {
+      justify-content: center;
+    }
   }
+
 }
 
 @media only screen and (max-width: 480px) {
