@@ -197,8 +197,8 @@ a {
         padding: 0 !important;
       }
       button {
+        border-radius: .15rem;
         padding: 0 1rem;
-        // border-radius: .25rem;
         cursor: pointer;
         font-weight: 400;
         @extend .cta-button.cta-filled;
