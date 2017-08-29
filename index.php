@@ -1,5 +1,12 @@
 <?php 
+  // Turn off all error reporting
+  error_reporting(0);
+
   include 'includes/app_functions.php';
+  
+  // Parsedown, a library to parse Markdown files and content
+  include 'lib/Parsedown.php';
+  $Parsedown = new Parsedown();
 
   // Lead Form
   if(isset($_POST['sendForm'])) {
@@ -20,7 +27,7 @@
   }
 
   // Site Settings
-  $site_title = "Modern Theme";
+  $site_title = "CodeSchool Project";
 
   // Get the page name and match it with the correct page partial.
   // These partials will be replaced with a database eventually.

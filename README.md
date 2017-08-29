@@ -4,6 +4,11 @@ This is a modern designed theme with basic layout and typography settings. The i
 
 You can request a pull from: git@bitbucket.org:kruegerdesigns/modern-theme.git
 
+Some of the third party features:
+* Parsedown.php
+* Bootstrap Markdown Editor
+* .htaccess Router thanks to Chris Cherry
+
 ### What is this repository for? ###
 
 * This project is for developers who need a starter or boilerplate Website template.
