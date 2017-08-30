@@ -2,9 +2,9 @@
 
 // Database Credentials
 $servername = "127.0.0.1";
-$username = "modern";
-$password = "@DminModern";
-$dbname = "modern_theme";
+$username = "";
+$password = "";
+$dbname = "";
 $charset = 'utf8';
 
 $dsn = "mysql:host=$servername;dbname=$dbname;charset=$charset";

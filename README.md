@@ -1,12 +1,11 @@
 # README #
 
-This is a modern designed theme with basic layout and typography settings. The intention of this theme is for it to be used as a starter or boilerplate template. 
+This is a modern designed theme with basic layout and typography settings. The file structure is designed to use the index.php file with a .htaccess router. I have also implemented a markdown editor (still in progress).
 
-You can request a pull from: git@bitbucket.org:kruegerdesigns/modern-theme.git
+You can request a pull from: git@github.com:KruegerDesigns/learning_cms.git
 
 Some of the third party features:
 * Parsedown.php
-* Bootstrap Markdown Editor
 * .htaccess Router thanks to Chris Cherry
 
 ### What is this repository for? ###
@@ -15,7 +14,7 @@ Some of the third party features:
 
 ### How do I get set up? ###
 
-* Initiat node package manager and install the dependancies
+* Initiate node package manager and install the dependencies
 * run `gulp watch`
 * Start coding... 
 
