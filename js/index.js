@@ -28,6 +28,16 @@ $(document).ready(function(){
     $(".nav-top ul li ul").removeClass("expand");
   });
 
+  // Toggle Editor Overlay
+  $('#showPageSettings').on('click', function(e){
+    e.preventDefault();
+    $('.overlay-settings').addClass('visible');
+  });
+  $('#hidePageSettings').on('click', function(e){
+    e.preventDefault();
+    $('.overlay-settings').removeClass('visible');
+  });
+
   if ( $("video,audio").length ) {
     // Media Element Javascript Settings
     $("video,audio").mediaelementplayer({

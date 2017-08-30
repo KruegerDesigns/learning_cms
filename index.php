@@ -3,10 +3,6 @@
   error_reporting(0);
 
   include 'includes/app_functions.php';
-  
-  // Parsedown, a library to parse Markdown files and content
-  include 'lib/Parsedown.php';
-  $Parsedown = new Parsedown();
 
   // Lead Form
   if(isset($_POST['sendForm'])) {
@@ -18,6 +14,11 @@
   if(isset($_POST['sendAnonymous'])) {
     // call form handler
     $errorMsg = validateSendAnonymous($_POST);
+  }
+
+  if(isset($_POST['editPage'])) {
+    // call form handler
+    $errorMsg = editPageForm($_POST);
   }
 
   // Databse Setup Script
@@ -54,9 +55,16 @@
   <!-- Masthead -->
   <?php include 'includes/site_masthead.php'; ?>
   
+  <!-- Editor -->
+  <?php
+    if($page_url=='lets-edit-stuff') {
+      include 'includes/page_editor_form.php';
+    } 
+  ?>
+
   <!-- Content -->
   <?= $page_content ?>
-  
+
   <!-- Footer -->
   <?php include 'includes/site_footer.php'; ?>
     

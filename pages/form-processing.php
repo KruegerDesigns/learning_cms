@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Form Processing";
+  $page_title = $site_title." - Form Processing";
   $page_name = "Form Processing";
   $page_template = "detail"; // for body class
   $page_masthead_image_url = "img/clouds-20kb.jpg"; //img/clouds-20kb.jpg

@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Thank You";
+  $page_title = $site_title." - Thank You";
   $page_name = "Thank You";
   $page_template = "detail";
   $page_masthead_image_url = "/img/thank-you.jpg";

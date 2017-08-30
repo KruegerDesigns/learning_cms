@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Error";
+  $page_title = $site_title." - Error";
   $page_name = "Error";
   $page_template = "detail";
   $page_masthead_image_url = "/img/maps.jpg";

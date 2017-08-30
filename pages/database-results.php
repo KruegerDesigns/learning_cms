@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Form Results";
+  $page_title = $site_title." - Form Results";
   $page_name = "Database Experiments";
   $page_template = "detail";
   $page_masthead_image_url = "/img/database.jpg";

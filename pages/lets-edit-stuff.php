@@ -1,10 +1,12 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - All The Things";
-  $page_name = "All The Things";
+  $page_title = $site_title." - Let's Edit Stuff";
+  $page_name = "Let's Edit Stuff";
   $page_template = "detail";
   $page_masthead_image_url = "/img/edit-photo.jpg";
+?>
 
+<?php 
   ob_start(); 
 ?>
 
@@ -180,4 +182,6 @@
   </div>
 </div>
 
-<?php $page_content = ob_get_clean(); ?>
+<?php 
+  $page_content=ob_get_clean();
+?>

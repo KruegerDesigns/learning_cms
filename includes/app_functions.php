@@ -1,6 +1,11 @@
 <?php
 
+// The PDO call, separated so it's easier to exclude incase I share this file
 include 'app_pdo_connection.php';
+
+// Parsedown, a library to parse Markdown files and content
+include './lib/Parsedown.php';
+$Parsedown = new Parsedown();
 
 // This function creates the table "Form" and the starting fields in the database.
 function CreateTable() {
@@ -57,7 +62,7 @@ function EchoAllLeads() {
   // Select and show the data from the Form table
   $sql = 'SELECT id, name, email, options, radio, message, dateposted FROM Form';
   $result = $pdo->query($sql);
-  if ($result->num_rows >= 0) {
+  if ($result->rowCount() >= 0) {
     // output data of each row
     $stmt = $pdo->query($sql);
     foreach ($stmt as $row) {
@@ -140,39 +145,34 @@ function validateFeedbackForm($post) {
   exit;
 }
 
-// This is PHP form validation and form processor.
-function validateSendAnonymous($post) {
-  $contact_name = htmlspecialchars($post['contact_name']);
-  $contact_email = htmlspecialchars($post['contact_email']);
-  $contact_subject = htmlspecialchars($post['contact_subject']);
-  $contact_message = htmlspecialchars($post['contact_message']);
+// Form to edit the $page_content variable for a page.
+function editPageForm($post) {
+  $edit_content = htmlspecialchars($post['edit_content']);
+  $edit_secret = htmlspecialchars($post['edit_secret']);
+  $edit_confirm = htmlspecialchars($post['edit_confirm']);
 
-  if(!isset($contact_name, $contact_email, $contact_subject, $contact_message)) return;
+  if(!isset($edit_content, $edit_secret, $edit_confirm)) return;
 
-  if(!$contact_name) {
-    return "Please enter your Name";
+  if(!$edit_content) {
+    return "Please enter new page content";
   }
-  if(!preg_match("/^\S+@\S+$/", $contact_email)) {
-    return "Please enter a valid Email address";
+  if($edit_secret != 'codeschool') {
+    return "Please enter a valid secret";
   }
-  if(!$subject) {
-    $subject = "Anonymous Einstein Message";
-  }
-  if(!$contact_message) {
-    return "Please enter you message in the \"Message\" box below.";
+  if($edit_confirm != "confirmed") {
+    return "You did not confirm your changes";
   }
 
-  // empty field spam test
-  if(trim($contact_business) != null) {
-    header("Location: /");
-    die;  
-  }
+  $file = 'pages/'.$_GET['page_url'].'.php';
+  //read file
+  $content = file_get_contents($file);
+  // here goes your update
+  global $Parsedown;
+  $content = str_replace('$page_content=ob_get_clean();', "ob_get_clean(); \n".'$page_content=\'<div class="container">'.$Parsedown->text($edit_content).'</div>\';', $content);
+  //write file
+  file_put_contents($file, $content);
 
-  // send email and redirect
-  $to = "adam@kruegerdesigns.com";
-  $headers = "From: $contact_email" . "\r\n";
-  mail($to, $subject, $contact_message, $headers);
-  header("Location: /thank-you");
-  
+  header('Location: '.$_GET['page_url']);  
+
   exit;
 }

@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Home";
+  $page_title = $site_title." - Home";
   $page_name = "Homepage";
   $page_template = "home";
   $page_masthead_image_url = "/img/clouds-50mb.gif";

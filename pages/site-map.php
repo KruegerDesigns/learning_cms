@@ -1,6 +1,6 @@
 <?php 
   // Page Settings
-  $page_title = "Modern Theme - Site Map";
+  $page_title = $site_title." - Site Map";
   $page_name = "Site Map";
   $page_template = "detail";
   $page_masthead_image_url = "/img/clouds-20kb.jpg";
